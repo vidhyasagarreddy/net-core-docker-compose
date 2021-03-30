@@ -1,0 +1,21 @@
+services:
+  api-1:
+    build:
+      context: D:\Office\Practise\dockers\3\all-apis
+      dockerfile: api-1/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: api1
+    ports:
+    - published: 1234
+      target: 80
+    - target: 80
+  api-2:
+    build:
+      context: D:\Office\Practise\dockers\3\all-apis
+      dockerfile: api-2/Dockerfile
+    image: api2
+    ports:
+    - published: 2345
+      target: 80
+version: '3.4'

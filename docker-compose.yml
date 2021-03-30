@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  api-1:
+    image: ${DOCKER_REGISTRY-}api1
+    build:
+      context: .
+      dockerfile: api-1/Dockerfile
+    ports:
+    - 4000:80
+  api-2:
+    image: ${DOCKER_REGISTRY-}api2
+    build:
+      context: .
+      dockerfile: api-2/Dockerfile
+    ports:
+    - 4001:80
